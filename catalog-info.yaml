@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: fczsh4itk-java-springboot-gitops
+  description: This is GitOps manifest for fczsh4itk-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=fczsh4itk-java-springboot
+    backstage.io/kubernetes-id: fczsh4itk-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: fczsh4itk-java-springboot
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:fczsh4itk-java-springboot
